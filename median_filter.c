@@ -2,7 +2,7 @@
  * filter.c -- программа для наложения фильтров на
  * изображение в формате BMP
  *
- * Copyright (c) 2009, Student Name <student@cs.petrsu.ru>
+ * Copyright (c) 2021, Levickii Ivan <levickii@cs.petrsu.ru>
  *
  * This code is licensed under a MIT-style license.
  */
