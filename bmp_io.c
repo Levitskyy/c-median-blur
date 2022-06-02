@@ -1,7 +1,7 @@
 /**
  * bmp_io.c -- функции чтения-записи файлов изображений в формате BMP
  *
- * Copyright (c) 2009, Student Name <student@cs.petrsu.ru>
+ * Copyright (c) 2009, Levickii Ivan <levickii@cs.petrsu.ru>
  *
  * This code is licensed under a MIT-style license.
  */ 
