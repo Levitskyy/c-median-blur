@@ -1,0 +1,4 @@
+filter
+median_filter.o
+bmp_io.o
+filter.o

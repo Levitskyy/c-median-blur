@@ -59,7 +59,11 @@ void median_blur(bmp_image * image)
 
 int cmp(const void *a, const void *b)
 {
-    return *(int *) a - *(int *) b;
+    double d1 = *(double*)a;
+    double d2 = *(double*)b;
+    return
+	    (d1 > d2) ? 1 :
+	    (d1 < d2) ? -1 : 0;
 }
 
 
@@ -92,7 +96,7 @@ double *create_median_window(double *pixel_array, bmp_image * image)
                 &pixel_array[(h - 2) * image->header.width + (w - 2)];
             /* Проверяем, не выходит ли он за пределы массива пикселей */
             if (current_pos >= image->pixel_array
-                && current_pos <= &(image->pixel_array[3 * size])) {
+                && current_pos < &(image->pixel_array[3 * size])) {
                 /* Получаем цвет текущего элемента */
                 int current_color = get_color(current_pos, image);
                 if (current_color != color) {
@@ -102,11 +106,9 @@ double *create_median_window(double *pixel_array, bmp_image * image)
                     /* Иначе берем значение текущего элемента  */
                     *buf = *current_pos;
                 }
-                buf++;
-            } else {
+            } else 
                 *buf = *pixel_array;
-                buf++;
-            }
+            buf++;
         }
     }
 
